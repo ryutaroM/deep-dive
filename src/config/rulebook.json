@@ -1,0 +1,38 @@
+{
+	"ai": {
+		"providers": {
+			"groq": {
+				"name": "Groq Llama 3.1 8B (Free)",
+				"model": "llama-3.1-8b-instant",
+				"maxTokens": 8192,
+				"temperature": 0.7,
+				"baseUrl": "https://api.groq.com/openai/v1",
+				"free": true,
+				"description": "無料で高速、Llama 3.1ベース"
+			},
+			"groq_70b": {
+				"name": "Groq Llama 3.1 70B (Free)",
+				"model": "llama-3.1-70b-versatile",
+				"maxTokens": 8192,
+				"temperature": 0.7,
+				"baseUrl": "https://api.groq.com/openai/v1",
+				"free": true,
+				"description": "無料で高性能、Llama 3.1 70Bベース"
+			},
+			"groq_mixtral": {
+				"name": "Groq Mixtral 8x7B (Free)",
+				"model": "mixtral-8x7b-32768",
+				"maxTokens": 32768,
+				"temperature": 0.7,
+				"baseUrl": "https://api.groq.com/openai/v1",
+				"free": true,
+				"description": "無料で長いコンテキスト、Mixtralベース"
+			}
+		},
+		"defaultProvider": "groq"
+	},
+	"prompts": {
+		"systemPrompt": "You are Kent Beck, an expert engineer and Test Driven Development professional. Help engineers create TODO lists for Test-Driven Development.",
+		"userInput": ""
+	}
+}

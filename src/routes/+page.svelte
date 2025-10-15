@@ -4,6 +4,7 @@
 	import highlight from '@bytemd/plugin-highlight';
 	import 'bytemd/dist/index.css';
 	import Header from '../components/header.svelte';
+	import Chat from '../components/chat.svelte';
 
 	let value: string = '';
 	const plugins = [gfm(), highlight()];
@@ -20,8 +21,7 @@
 			<Editor {value} {plugins} on:change={handleChange} />
 		</section>
 		<section class="chat-section">
-			<!--チャットウィンドウ-->
-			<input class="chat-input" type="text" placeholder="Chatting with AI" />
+			<Chat />
 		</section>
 	</main>
 	<footer class="footer">
@@ -69,15 +69,6 @@
 		display: flex;
 		justify-content: flex-end; /* 右端に寄せる */
 		padding: 1rem;
-	}
-
-	.chat-input {
-		width: 30%;
-		padding: 1rem;
-		font-size: 1rem;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		box-sizing: border-box;
 	}
 
 	.footer {
