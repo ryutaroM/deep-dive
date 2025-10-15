@@ -40,5 +40,10 @@
 		"vitest": "^3.2.4",
 		"vitest-browser-svelte": "^1.1.0",
 		"wrangler": "^4.43.0"
+	},
+	"dependencies": {
+		"@bytemd/plugin-gfm": "^1.22.0",
+		"@bytemd/plugin-highlight": "^1.22.0",
+		"bytemd": "^1.22.0"
 	}
 }
