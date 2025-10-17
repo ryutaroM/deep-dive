@@ -1,25 +1,14 @@
 <script lang="ts">
-	import { Editor, Viewer } from 'bytemd';
-	import gfm from '@bytemd/plugin-gfm';
-	import 'highlight.js/styles/default.css';
-	import highlight from '@bytemd/plugin-highlight';
-	import 'bytemd/dist/index.css';
 	import Header from '../components/header.svelte';
 	import Chat from '../components/chat.svelte';
-
-	let value: string = '';
-	const plugins = [gfm(), highlight()];
-
-	function handleChange(e: CustomEvent) {
-		value = e.detail.value;
-	}
+	import Editor from '../components/editor.svelte';
 </script>
 
 <div class="app-container">
 	<Header />
 	<main class="markdown-workspace">
 		<section class="editor-section">
-			<Editor {value} {plugins} on:change={handleChange} />
+			<Editor />
 		</section>
 		<section class="chat-section">
 			<Chat />
