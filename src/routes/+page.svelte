@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Editor, Viewer } from 'bytemd';
 	import gfm from '@bytemd/plugin-gfm';
+	import 'highlight.js/styles/default.css';
 	import highlight from '@bytemd/plugin-highlight';
 	import 'bytemd/dist/index.css';
 	import Header from '../components/header.svelte';
