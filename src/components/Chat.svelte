@@ -3,6 +3,7 @@
 	import type { RuleBook } from '../types/rulebook';
 	import rulebookData from '../config/rulebook.json';
 	import { tick } from 'svelte';
+	import { marked } from 'marked';
 
 	let chatHistoryElement: HTMLDivElement;
 
@@ -98,7 +99,13 @@
 			{#each chatHistory as message}
 				<div class="message {message.role}">
 					<strong>{message.role === 'user' ? 'You' : 'AI'}:</strong>
-					<p>{message.content}</p>
+					{#if message.role === 'assistant'}
+						<div class="markdown-content">
+							{@html marked(message.content)}
+						</div>
+					{:else}
+						<p>{message.content}</p>
+					{/if}
 				</div>
 			{/each}
 			{#if isLoading}
@@ -223,27 +230,32 @@
 	}
 
 	.message.user {
-		background: #e3f2fd;
+		background: linear-gradient(
+			135deg,
+			rgba(102, 126, 234, 0.08) 0%,
+			rgba(118, 75, 162, 0.05) 100%
+		);
 		margin-left: 20%;
 		text-align: right;
 	}
 
 	.message.assistant {
-		background: #f1f8e9;
+		background: rgba(102, 126, 234, 0.04);
 		margin-right: 20%;
 	}
 
 	.message.error {
-		background: #ffebee;
+		background: rgba(244, 67, 54, 0.08);
 		color: #c62828;
 		margin: 0 10%;
 	}
 
 	.message.loading {
-		background: #fff3e0;
+		background: rgba(102, 126, 234, 0.06);
 		font-style: italic;
 		text-align: center;
 		padding: 0.4rem;
+		color: #667eea;
 	}
 
 	.chat-input {
