@@ -55,7 +55,7 @@
 			console.error('AI Error:', error);
 			chatHistory = [
 				...chatHistory,
-				{ role: 'error', content: 'エラーが発生しました。APIキーを確認してください。' }
+				{ role: 'error', content: 'An error occurred. Please check your API key.' }
 			];
 			await tick();
 			scrollToBottom();
@@ -82,15 +82,15 @@
 	{#if !aiService}
 		<!-- APIキー未設定時 -->
 		<div class="api-key-setup">
-			<h3>🔐 APIキーを設定してください</h3>
+			<h3>🔐 Set up your API Key</h3>
 			<input
 				class="api-key-input"
 				type="password"
 				bind:value={apiKey}
-				placeholder="Groq APIキーを入力"
+				placeholder="Enter your Groq API Key"
 				on:keypress={(e) => e.key === 'Enter' && setApiKey()}
 			/>
-			<button class="set-btn" on:click={setApiKey}> 開始 </button>
+			<button class="set-btn" on:click={setApiKey}> Start </button>
 		</div>
 	{:else}
 		<!-- チャットUI -->
