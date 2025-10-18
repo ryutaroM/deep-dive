@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Header from '../components/header.svelte';
-	import Chat from '../components/chat.svelte';
-	import Editor from '../components/editor.svelte';
+	import Header from '../components/Header.svelte';
+	import Chat from '../components/Chat.svelte';
+	import Editor from '../components/Editor.svelte';
 </script>
 
 <div class="app-container">
