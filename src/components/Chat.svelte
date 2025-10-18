@@ -125,9 +125,10 @@
 		min-height: 300px;
 		max-height: 600px;
 		width: 100%;
-		border: 1px solid #e0e0e0;
+		border: 1px solid var(--border-light);
 		border-radius: 8px;
 		overflow: hidden;
+		box-shadow: var(--shadow-md);
 		background: white;
 	}
 
@@ -151,17 +152,17 @@
 		width: 100%;
 		max-width: 350px;
 		padding: 0.6rem;
-		border: 1px solid #ccc;
-		border-radius: 4px;
+		border: 1px solid var(--border-medium);
+		border-radius: var(--radius);
 		font-size: 0.9rem;
 	}
 
 	.set-btn {
 		padding: 0.6rem 1.5rem;
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		background: linear-gradient(135deg, var(--primary-start) 0%, var(--primary-end) 100%);
 		color: white;
 		border: none;
-		border-radius: 4px;
+		border-radius: var(--radius);
 		cursor: pointer;
 		font-weight: 600;
 		font-size: 0.9rem;
@@ -177,7 +178,7 @@
 		overflow-y: auto;
 		overflow-x: hidden;
 		padding: 0.75rem;
-		background: #fafafa;
+		background: var(--bg-secondary);
 		min-height: 0;
 		scrollbar-width: thin;
 		scrollbar-color: #ccc transparent;

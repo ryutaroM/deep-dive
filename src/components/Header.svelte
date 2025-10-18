@@ -7,8 +7,8 @@
 		width: 100vw;
 		position: relative;
 		padding: 1.5rem;
-		border-bottom: 1px solid #e9ecef;
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		border-bottom: 1px solid var(--border-light);
+		background: linear-gradient(135deg, var(--primary-start) 0%, var(--primary-end) 100%);
 		overflow: hidden;
 		margin-left: calc(-50vw + 50%);
 	}
@@ -51,7 +51,11 @@
 		position: relative;
 		z-index: 1;
 		color: white;
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+		text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 		margin: 0;
+		font-size: 2rem;
+		font-weight: 700;
+		letter-spacing: 0.5px;
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 	}
 </style>
