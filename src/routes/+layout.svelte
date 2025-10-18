@@ -21,7 +21,8 @@
 		content="An AI-powered markdown editor with integrated chat. Write, edit, and collaborate with AI assistance in real-time."
 	/>
 	<meta property="og:type" content="website" />
-	<meta property="og:image" content="/og-image.png" />
+	<meta property="og:image" content="https://deep-dive-7zi.pages.dev/og-image.png" />
+	<meta property="og:url" content="https://deep-dive-7zi.pages.dev/" />
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary" />
@@ -30,7 +31,7 @@
 		name="twitter:description"
 		content="An AI-powered markdown editor with integrated chat. Write, edit, and collaborate with AI assistance in real-time."
 	/>
-	<meta name="twitter:image" content="/og-image.png" />
+	<meta name="twitter:image" content="https://deep-dive-7zi.pages.dev/og-image.png" />
 </svelte:head>
 
 {@render children?.()}
