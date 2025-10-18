@@ -6,6 +6,7 @@
 	import 'bytemd/dist/index.css';
 	import breaks from '@bytemd/plugin-breaks';
 	import copyPlugin from '$lib/plugins/copy';
+	import gemoji from '@bytemd/plugin-gemoji';
 	import { onMount } from 'svelte';
 
 	// reactive editor data
@@ -38,7 +39,7 @@
 		}, 500);
 	});
 
-	const plugins = [gfm(), highlight(), breaks(), copyPlugin()];
+	const plugins = [gfm(), highlight(), breaks(), copyPlugin(), gemoji()];
 </script>
 
 <Editor value={editorData} {plugins} on:change={handleChange} />
