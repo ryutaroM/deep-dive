@@ -2,6 +2,10 @@
 	import Header from '../components/Header.svelte';
 	import Chat from '../components/Chat.svelte';
 	import Editor from '../components/Editor.svelte';
+	import rulebookData from '../config/rulebook.json' assert { type: 'json' };
+	import type { RuleBook } from '../types/rulebook';
+
+	const ruleBook = rulebookData as RuleBook;
 </script>
 
 <div class="app-container">
@@ -11,7 +15,7 @@
 			<Editor />
 		</section>
 		<section class="chat-section">
-			<Chat />
+			<Chat {ruleBook} />
 		</section>
 	</main>
 	<footer class="footer">

@@ -1,5 +1,5 @@
 import type { RequestHandler } from './$types';
-import rulebookData from '../../config/rulebook.json';
+import rulebookData from '../../config/rulebook.json' assert { type: 'json' };
 import type { RuleBook } from '../../types/rulebook';
 
 interface AIRequest {
