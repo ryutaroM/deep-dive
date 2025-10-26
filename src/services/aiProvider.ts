@@ -68,15 +68,13 @@ export class AIProviderService {
             throw new Error('API key is not set.');
         }
 
-        const endpoint = `${this.provider.baseUrl}/chat/completions`;
-
-        const response = await fetch(endpoint, {
+        const response = await fetch('/ai', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${this.apiKey}`
             },
             body: JSON.stringify({
+                apiKey: this.apiKey,
                 model: this.provider.model,
                 messages: [
                     { role: 'system', content: this.ruleBook.prompts.systemPrompt },
