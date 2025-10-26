@@ -29,7 +29,7 @@ export default defineConfig({
 				test: {
 					name: 'server',
 					environment: 'node',
-					include: ['tests/ai-server.spec.ts', 'src/demo.spec.ts'],
+					include: ['tests/ai-server.spec.ts'],
 					globals: true
 				}
 			}
