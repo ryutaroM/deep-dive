@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { POST, OPTIONS } from './+server';
+import { POST, OPTIONS } from '../src/routes/ai/+server';
 
 interface ErrorResponse {
     error: string;
