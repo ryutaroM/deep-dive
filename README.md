@@ -30,6 +30,8 @@ npm run dev
 ```
 Visit `http://localhost:5173` to see your application.
 
+Note: AI chat functionality requires you to enter your Groq API key in the browser. Get your API key from: https://console.groq.com/keys
+
 ### Testing
 
 #### Run All Tests
