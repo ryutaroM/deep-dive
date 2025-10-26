@@ -1,38 +1,57 @@
-# sv
+# Deep Dive - AI-Powered Markdown Editor
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A modern markdown editor with integrated AI chat capabilities. Built with SvelteKit and powered by Groq's LLM API.
 
-## Creating a project
+## ✨ Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+### 📝 Rich Markdown Support
+- **Syntax Highlighting** - Beautiful code blocks with language-specific highlighting
+- **Live Preview** - See your formatted content in real-time
+- **Auto-save** - Your work is automatically saved to local storage
 
-```sh
-# create a new project in the current directory
-npx sv create
+### 🤖 AI Chat Integration
+- Get instant help from AI while you write
+- Multiple LLM models available (Llama 3.1, Mixtral)
+- Seamless workflow without switching apps
 
-# create a new project in my-app
-npx sv create my-app
+## 🚀 Development
+
+### Prerequisites
+- Node.js 18+ and npm
+
+### Installation
+```bash
+npm install
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+### Running the Development Server
+```bash
 npm run dev
+```
+Visit `http://localhost:5173` to see your application.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+### Testing
+
+#### Run All Tests
+```bash
+npm test              # Run unit tests and E2E tests
+npm run test:all      # Same as above
 ```
 
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
+#### Unit Tests (Vitest)
+```bash
+npm run test:unit           # Run unit tests once
+npm run test:unit:watch     # Run in watch mode
+npm run test:unit:ui        # Run with UI
+npm run test:coverage       # Run with coverage report
 ```
 
-You can preview the production build with `npm run preview`.
+Coverage reports are generated in `./coverage/vitest/` directory.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+#### E2E Tests (Playwright)
+```bash
+npm run test:e2e            # Run E2E tests headless
+npm run test:e2e:ui         # Run with Playwright UI
+npm run test:e2e:headed     # Run with browser visible
+npm run test:e2e:debug      # Run in debug mode
+```
