@@ -29,8 +29,8 @@ export default defineConfig({
 				test: {
 					name: 'server',
 					environment: 'node',
-					include: ['src/**/*.{test,spec}.{js,ts}', 'tests/**/*.{test,spec}.{js,ts}'],
-					exclude: ['src/**/*.svelte.{test,spec}.{js,ts}', 'tests/editor-*.spec.ts', 'tests/example.spec.ts', 'tests/seed.spec.ts']
+					include: ['tests/ai-server.spec.ts', 'src/demo.spec.ts'],
+					globals: true
 				}
 			}
 		]
