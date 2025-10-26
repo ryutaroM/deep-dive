@@ -1,4 +1,6 @@
 import type { RequestHandler } from './$types';
+import rulebookData from '../../config/rulebook.json';
+import type { RuleBook } from '../../types/rulebook';
 
 interface AIRequest {
     apiKey: string;
@@ -22,6 +24,19 @@ interface AIResponse {
     id: string;
     model: string;
     created: number;
+}
+
+const rulebook = rulebookData as RuleBook;
+
+function getProviderBaseUrl(model: string): string {
+    // modelからproviderを探す
+    for (const [, provider] of Object.entries(rulebook.ai.providers)) {
+        if (provider.model === model) {
+            return provider.baseUrl;
+        }
+    }
+    // デフォルトプロバイダーのbaseUrlを返す
+    return rulebook.ai.providers[rulebook.ai.defaultProvider].baseUrl;
 }
 
 export const POST: RequestHandler = async ({ request }) => {
@@ -48,7 +63,10 @@ export const POST: RequestHandler = async ({ request }) => {
             });
         }
 
-        const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+        const baseUrl = getProviderBaseUrl(requestData.model);
+        const apiUrl = `${baseUrl}/chat/completions`;
+
+        const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
