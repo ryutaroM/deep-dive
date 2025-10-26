@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { AIProviderService } from '../services/aiProvider';
 	import type { RuleBook } from '../types/rulebook';
-	import rulebookData from '../config/rulebook.json';
 	import { tick } from 'svelte';
 	import { marked } from 'marked';
+
+	export let ruleBook: RuleBook;
 
 	let chatHistoryElement: HTMLDivElement;
 
@@ -23,13 +24,13 @@
 		);
 	}
 
-	if (!isRuleBook(rulebookData)) {
+	if (!isRuleBook(ruleBook)) {
 		throw new Error('Invalid rulebook configuration');
 	}
 
 	function setApiKey() {
 		if (apiKey.trim()) {
-			aiService = new AIProviderService(rulebookData, apiKey.trim());
+			aiService = new AIProviderService(ruleBook, apiKey.trim());
 		}
 	}
 
